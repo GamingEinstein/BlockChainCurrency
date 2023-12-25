@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "XXX",
+    "#Y#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "X": {
+      "item": "minecraft:paper"
+    },
+    "Y": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "blockchain_currency:bits_fabricator"
+  }
+}

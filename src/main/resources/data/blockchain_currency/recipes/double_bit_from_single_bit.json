@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockchain_currency:single_bit"
+    }
+  },
+  "result": {
+    "item": "blockchain_currency:double_bit"
+  }
+}

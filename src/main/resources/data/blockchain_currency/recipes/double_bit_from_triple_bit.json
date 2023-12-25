@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "blockchain_currency:triple_bit"
+    }
+  ],
+  "result": {
+    "item": "blockchain_currency:double_bit",
+    "count": 9
+  }
+}
