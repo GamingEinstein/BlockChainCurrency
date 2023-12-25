@@ -15,9 +15,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DOUBLE_BIT = ITEMS.register("double_bit",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TRIPLE_BIT = ITEMS.register("triple_bit",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BITS_WALLET = ITEMS.register("bits_wallet",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
-
         ITEMS.register(eventBus);
     }
 }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "blockchain_currency:block/bits_fabricator"
+    }
+  }
+}

@@ -1,6 +1,10 @@
 {
   "item.blockchain_currency.single_bit": "Single Bit",
   "item.blockchain_currency.double_bit": "Double Bit",
+  "item.blockchain_currency.triple_bit": "Triple Bit",
+  "item.blockchain_currency.bits_wallet": "Bits Wallet",
+
+  "block.blockchain_currency.bits_fabricator": "Bits Fabricator",
 
   "creativetab.blockchain_currency_tab": "BlockChain Currency"
 }

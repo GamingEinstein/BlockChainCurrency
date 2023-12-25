@@ -1,7 +1,8 @@
 package net.gamingeinstein.blockchaincurrency;
 
 import com.mojang.logging.LogUtils;
-import net.gamingeinstein.blockchaincurrency.item.ModCreativeModTabs;
+import net.gamingeinstein.blockchaincurrency.block.ModBlocks;
+import net.gamingeinstein.blockchaincurrency.item.ModCreativeModeTabs;
 import net.gamingeinstein.blockchaincurrency.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,7 +31,8 @@ public class BlockChainCurrency {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
-        ModCreativeModTabs.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -45,10 +47,7 @@ public class BlockChainCurrency {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.SINGLE_BIT);
-            event.accept(ModItems.DOUBLE_BIT);
-        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
