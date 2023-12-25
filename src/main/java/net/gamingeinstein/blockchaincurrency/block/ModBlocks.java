@@ -1,6 +1,7 @@
 package net.gamingeinstein.blockchaincurrency.block;
 
 import net.gamingeinstein.blockchaincurrency.BlockChainCurrency;
+import net.gamingeinstein.blockchaincurrency.block.custom.BitsFabricatorBlock;
 import net.gamingeinstein.blockchaincurrency.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,7 +21,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, BlockChainCurrency.MOD_ID);
 
     public static final RegistryObject<Block> BITS_FABRICATOR = registerBlock("bits_fabricator",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+            () -> new BitsFabricatorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
