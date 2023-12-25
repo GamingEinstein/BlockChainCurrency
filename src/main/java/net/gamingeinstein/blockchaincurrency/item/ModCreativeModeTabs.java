@@ -19,7 +19,6 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SINGLE_BIT.get()))
                     .title(Component.translatable("creativetab.blockchain_currency_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        //pOutput.accept(ModItems.[item].get());
                         pOutput.accept(ModItems.SINGLE_BIT.get());
                         pOutput.accept(ModItems.DOUBLE_BIT.get());
                         pOutput.accept(ModItems.TRIPLE_BIT.get());

@@ -2,8 +2,12 @@ package net.gamingeinstein.blockchaincurrency;
 
 import com.mojang.logging.LogUtils;
 import net.gamingeinstein.blockchaincurrency.block.ModBlocks;
+import net.gamingeinstein.blockchaincurrency.block.entity.ModBlockEntities;
 import net.gamingeinstein.blockchaincurrency.item.ModCreativeModeTabs;
 import net.gamingeinstein.blockchaincurrency.item.ModItems;
+import net.gamingeinstein.blockchaincurrency.screen.BitsFabricatorScreen;
+import net.gamingeinstein.blockchaincurrency.screen.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -28,7 +32,9 @@ public class BlockChainCurrency {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -53,7 +59,7 @@ public class BlockChainCurrency {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(ModMenuTypes.BITS_FABRICATOR_MENU.get(), BitsFabricatorScreen::new);
         }
     }
 }

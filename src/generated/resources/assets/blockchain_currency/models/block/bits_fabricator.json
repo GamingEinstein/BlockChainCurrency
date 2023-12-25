@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "blockchain_currency:block/bits_fabricator"
-  }
-}
