@@ -22,9 +22,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DOUBLE_BIT.get(), 9)
                 .requires(ModItems.TRIPLE_BIT.get())
+                .unlockedBy(getHasName(ModItems.TRIPLE_BIT.get()), has(ModItems.TRIPLE_BIT.get()))
                 .save(pWriter);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SINGLE_BIT.get(), 9)
                 .requires(ModItems.DOUBLE_BIT.get())
+                .unlockedBy(getHasName(ModItems.DOUBLE_BIT.get()), has(ModItems.DOUBLE_BIT.get()))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BITS_FABRICATOR.get())
@@ -42,18 +44,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', Items.LEATHER)
                 .define('I', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER))
-                .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DOUBLE_BIT.get())
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.SINGLE_BIT.get())
-                .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TRIPLE_BIT.get())
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.DOUBLE_BIT.get())
                 .save(pWriter);
     }
 }

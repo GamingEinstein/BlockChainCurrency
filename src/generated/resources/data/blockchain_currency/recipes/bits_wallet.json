@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "#I#",
+    "###"
+  ],
+  "result": {
+    "item": "blockchain_currency:bits_wallet"
+  },
+  "show_notification": true
+}

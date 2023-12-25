@@ -1,0 +1,9 @@
+// 1.20.1	2023-12-25T08:01:48.048538469	Recipes
+8074de0cb9f0de1c7275bec5f24ce18ee01867b9 data/blockchain_currency/advancements/recipes/misc/bits_fabricator.json
+33eb622429b9ada7d51311860be606f16b38b57d data/blockchain_currency/advancements/recipes/misc/bits_wallet.json
+f8fdf75e05baf4a2c42e3690c711fc2427ef32ac data/blockchain_currency/advancements/recipes/misc/double_bit.json
+8e1c12b368c5ff677a9c12df338d2861abf1668d data/blockchain_currency/advancements/recipes/misc/single_bit.json
+99938a38667176e4e806efe685b5c8662f19a508 data/blockchain_currency/recipes/bits_fabricator.json
+b2c0b375c014d1ec2b792cdd85e095e77ceb1bb7 data/blockchain_currency/recipes/bits_wallet.json
+f89178ab126940f0b78781f84baef7e43785b7cd data/blockchain_currency/recipes/double_bit.json
+15d1a834fa3b55d35642e1ce7989805ebb8ddd0e data/blockchain_currency/recipes/single_bit.json

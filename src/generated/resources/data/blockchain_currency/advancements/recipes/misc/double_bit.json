@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockchain_currency:double_bit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_triple_bit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockchain_currency:triple_bit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_triple_bit",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockchain_currency:double_bit"
+    ]
+  },
+  "sends_telemetry_event": false
+}
