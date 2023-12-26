@@ -1,4 +1,7 @@
- # <center>BlockChain Currency</center>
+<p align="center"><img src="https://imgur.com/a/D7pe5i6" alt="Logo"></p>
+<h1 align="center">BlockChain Currency  <br>
+    <br><br>
+</h1>
 
 ## Installation Requirements
 | Minecraft | Forge | NeoForge | Fabric | Quilt |
