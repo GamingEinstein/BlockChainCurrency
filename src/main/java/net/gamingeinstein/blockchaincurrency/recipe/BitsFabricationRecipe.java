@@ -15,6 +15,11 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
+/*
+ * Can't seem to figure out how to make different input amounts for different amounts, along with properly removing the correct amount of items besides one
+ * Love it...
+ */
+
 public class BitsFabricationRecipe implements Recipe<SimpleContainer> {
 
     private final NonNullList<Ingredient> inputItems;
@@ -22,6 +27,7 @@ public class BitsFabricationRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
 
     public BitsFabricationRecipe(NonNullList<Ingredient> inputItems, ItemStack output, ResourceLocation id) {
+
         this.inputItems = inputItems;
         this.output = output;
         this.id = id;
@@ -29,6 +35,7 @@ public class BitsFabricationRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
+
         if (pLevel.isClientSide()) {
             return false;
         }
@@ -72,16 +79,19 @@ public class BitsFabricationRecipe implements Recipe<SimpleContainer> {
     }
 
     public static class Type implements RecipeType<BitsFabricationRecipe> {
+
         public static final Type INSTANCE = new Type();
         public static final String ID = "bits_fabrication";
     }
 
     public static class Serializer implements RecipeSerializer<BitsFabricationRecipe> {
+
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID = new ResourceLocation(BlockChainCurrency.MOD_ID, "bits_fabrication");
 
         @Override
         public BitsFabricationRecipe fromJson(ResourceLocation pRecipeID, JsonObject pSerializedRecipe) {
+
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
@@ -96,9 +106,10 @@ public class BitsFabricationRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public @Nullable BitsFabricationRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+
             NonNullList<Ingredient> inputs = NonNullList.withSize(pBuffer.readInt(), Ingredient.EMPTY);
 
-            for(int i = 0; i < inputs.size(); i++) {
+            for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromNetwork(pBuffer));
             }
 
@@ -108,6 +119,7 @@ public class BitsFabricationRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public void toNetwork(FriendlyByteBuf pBuffer, BitsFabricationRecipe pRecipe) {
+
             pBuffer.writeInt(pRecipe.inputItems.size());
 
             for (Ingredient ingredient : pRecipe.getIngredients()) {

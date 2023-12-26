@@ -14,11 +14,13 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItemModelProvider extends ItemModelProvider {
 
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+
         super(output, BlockChainCurrency.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
+
         simpleItem(ModItems.SINGLE_BIT);
         simpleItem(ModItems.DOUBLE_BIT);
         simpleItem(ModItems.TRIPLE_BIT);

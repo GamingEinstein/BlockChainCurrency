@@ -11,12 +11,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModMenuTypes {
+
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, BlockChainCurrency.MOD_ID);
 
     public static final RegistryObject<MenuType<BitsFabricatorMenu>> BITS_FABRICATOR_MENU =
             registerMenuType("bits_fabricator_menu", BitsFabricatorMenu::new);
-
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

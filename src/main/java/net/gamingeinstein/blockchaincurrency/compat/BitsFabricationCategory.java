@@ -28,6 +28,7 @@ public class BitsFabricationCategory implements IRecipeCategory<BitsFabricationR
     private final IDrawable icon;
 
     public BitsFabricationCategory(IGuiHelper helper) {
+
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.BITS_FABRICATOR.get()));
     }
@@ -39,21 +40,25 @@ public class BitsFabricationCategory implements IRecipeCategory<BitsFabricationR
 
     @Override
     public Component getTitle() {
+
         return Component.translatable("block.blockchain_currency.bits_fabricator");
     }
 
     @Override
     public IDrawable getBackground() {
+
         return this.background;
     }
 
     @Override
     public IDrawable getIcon() {
+
         return this.icon;
     }
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, BitsFabricationRecipe recipe, IFocusGroup focuses) {
+
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 11).addIngredients(recipe.getIngredients().get(0));
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 59).addItemStack(recipe.getResultItem(null));

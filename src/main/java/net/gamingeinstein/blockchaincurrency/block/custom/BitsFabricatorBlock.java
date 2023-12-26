@@ -27,23 +27,28 @@ public class BitsFabricatorBlock extends BaseEntityBlock {
     public static final VoxelShape SHAPE = Block.box(2, 0, 2, 14, 13, 14);
 
     public BitsFabricatorBlock(Properties pProperties) {
+
         super(pProperties);
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+
         return SHAPE;
     }
 
     @Override
     public RenderShape getRenderShape(BlockState pState) {
+
         return RenderShape.MODEL;
     }
 
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+
             if (blockEntity instanceof BitsFabricatorBlockEntity) {
                 ((BitsFabricatorBlockEntity) blockEntity).drops();
             }
@@ -54,8 +59,10 @@ public class BitsFabricatorBlock extends BaseEntityBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
+
             if (entity instanceof BitsFabricatorBlockEntity) {
                 NetworkHooks.openScreen(((ServerPlayer)pPlayer), (BitsFabricatorBlockEntity)entity, pPos);
             } else {
@@ -69,12 +76,14 @@ public class BitsFabricatorBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+
         return new BitsFabricatorBlockEntity(pPos, pState);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+
         if (pLevel.isClientSide()) {
             return null;
         }

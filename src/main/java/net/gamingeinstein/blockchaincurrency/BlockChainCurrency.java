@@ -8,7 +8,7 @@ import net.gamingeinstein.blockchaincurrency.item.ModItems;
 import net.gamingeinstein.blockchaincurrency.recipe.ModRecipes;
 import net.gamingeinstein.blockchaincurrency.screen.BitsFabricatorScreen;
 import net.gamingeinstein.blockchaincurrency.screen.ModMenuTypes;
-import net.gamingeinstein.blockchaincurrency.setup.BlockChainCurrencyConfig;
+import net.gamingeinstein.blockchaincurrency.config.BlockChainCurrencyConfig;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,9 +29,8 @@ public class BlockChainCurrency {
     public static final String MOD_ID = "blockchain_currency";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-
-
     public BlockChainCurrency() {
+
         BlockChainCurrencyConfig.register(ModLoadingContext.get());
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -45,23 +44,7 @@ public class BlockChainCurrency {
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
 
-        modEventBus.addListener(this::commonSetup);
-
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
-    }
-
-    private void commonSetup(final FMLCommonSetupEvent event) {
-
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
-    }
-
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

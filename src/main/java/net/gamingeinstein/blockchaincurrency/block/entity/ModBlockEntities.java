@@ -9,6 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockEntities {
+
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, BlockChainCurrency.MOD_ID);
 
@@ -18,6 +19,7 @@ public class ModBlockEntities {
                             ModBlocks.BITS_FABRICATOR.get()).build(null));
 
     public static void register(IEventBus eventBus) {
+
         BLOCK_ENTITIES.register(eventBus);
     }
 }

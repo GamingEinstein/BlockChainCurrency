@@ -17,6 +17,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 
 public class BitsFabricatorBlockEntityRenderer implements BlockEntityRenderer<BitsFabricatorBlockEntity> {
+
     public BitsFabricatorBlockEntityRenderer(BlockEntityRendererProvider.Context context) {
 
     }
@@ -24,6 +25,7 @@ public class BitsFabricatorBlockEntityRenderer implements BlockEntityRenderer<Bi
     @Override
     public void render(BitsFabricatorBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack,
                        MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         ItemStack itemStack = pBlockEntity.getRenderStack();
 
@@ -38,6 +40,7 @@ public class BitsFabricatorBlockEntityRenderer implements BlockEntityRenderer<Bi
     }
 
     private int getLightLevel(Level level, BlockPos pos) {
+
         int bLight = level.getBrightness(LightLayer.BLOCK, pos);
         int sLight = level.getBrightness(LightLayer.SKY, pos);
         return LightTexture.pack(bLight, sLight);

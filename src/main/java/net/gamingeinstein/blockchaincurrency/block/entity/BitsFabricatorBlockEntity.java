@@ -34,6 +34,7 @@ import java.util.Optional;
 public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvider {
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -53,7 +54,9 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
     private int maxProgress = 78;
 
     public BitsFabricatorBlockEntity(BlockPos pPos, BlockState pBlockState) {
+
         super(ModBlockEntities.BITS_FABRICATOR_BLOCK_ENTITY.get(), pPos, pBlockState);
+
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
@@ -80,6 +83,7 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
     }
 
     public ItemStack getRenderStack() {
+
         if (itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty()) {
             return itemHandler.getStackInSlot(INPUT_SLOT);
         } else {
@@ -89,6 +93,7 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+
         if(cap == ForgeCapabilities.ITEM_HANDLER) {
             return lazyItemHandler.cast();
         }
@@ -98,17 +103,20 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
 
     @Override
     public void onLoad() {
+
         super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
     }
 
     @Override
     public void invalidateCaps() {
+
         super.invalidateCaps();
         lazyItemHandler.invalidate();
     }
 
     public void drops() {
+
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
@@ -119,17 +127,20 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
 
     @Override
     public Component getDisplayName() {
+
         return Component.translatable("block.blockchain_currency.bits_fabricator");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerID, Inventory pPlayerInventory, Player pPlayer) {
+
         return new BitsFabricatorMenu(pContainerID, pPlayerInventory, this, this.data);
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag) {
+
         pTag.put("inventory", itemHandler.serializeNBT());
         pTag.putInt("bits_fabricator.progress", progress);
 
@@ -138,6 +149,7 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
 
     @Override
     public void load(CompoundTag pTag) {
+
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
         progress = pTag.getInt("bits_fabricator.progress");
@@ -160,6 +172,7 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
     }
 
     private boolean hasRecipe() {
+
         Optional<BitsFabricationRecipe> recipe = getCurrentRecipe();
 
         if (recipe.isEmpty()) {
@@ -172,7 +185,9 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
     }
 
     private Optional<BitsFabricationRecipe> getCurrentRecipe() {
+
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
@@ -181,18 +196,23 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
+
         return this.itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() || this.itemHandler.getStackInSlot(OUTPUT_SLOT).is(item);
     }
     private boolean canInsertAmountIntoOutputSlot(int count) {
+
         return this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + count <= this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
     }
     private void increaseCraftingProgress() {
+
         progress++;
     }
     private boolean hasProgressFinished() {
+
         return progress >= maxProgress;
     }
     private void craftItem() {
+
         Optional<BitsFabricationRecipe> recipe = getCurrentRecipe();
         ItemStack result = recipe.get().getResultItem(null);
 
@@ -202,17 +222,20 @@ public class BitsFabricatorBlockEntity extends BlockEntity implements MenuProvid
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }
     private void resetProgress() {
+
         progress = 0;
     }
 
     @Nullable
     @Override
     public Packet<ClientGamePacketListener> getUpdatePacket() {
+
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
     public CompoundTag getUpdateTag() {
+
         return saveWithoutMetadata();
     }
 }

@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class BitsFabricatorScreen extends AbstractContainerScreen<BitsFabricatorMenu> {
+
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(BlockChainCurrency.MOD_ID, "textures/gui/bits_fabricator_gui.png");
 
