@@ -6,7 +6,7 @@
 ## Installation Requirements
 | Minecraft | Forge | NeoForge | Fabric | Quilt |
 |--|--|--|--|--|
-| 1.20.1 | Yes | Probably | No | No |
+| 1.20.1 | Yes | Yes | No | No |
 
 THIS MOD IS IN EARLY DEVELOPMENT! THERE ARE BOUND TO BE SOME THINGS THAT ARE BROKEN, MISSING, AND MORE! PLEASE LEAVE FEEDBACK AND ISSUES ON THE [GITHUB](https://github.com/GamingEinstein/BlockChainCurrency)!
 
