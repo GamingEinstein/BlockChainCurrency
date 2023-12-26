@@ -43,7 +43,7 @@ public class BlockChainCurrencyConfig {
 
         Common(final ForgeConfigSpec.Builder builder) {
 
-            builder.comment("Common config settings")
+            builder.comment("Common Config Settings")
                     .push("common");
 
             //Bit Fabrication Settings
@@ -68,7 +68,7 @@ public class BlockChainCurrencyConfig {
                         .define("singleBitBase", String.valueOf(Items.DIAMOND));
                 baseToSingleYield = builder
                         .comment("How many Single Bits should yield from Base Item")
-                        .defineInRange("basteToSingleYield", 8, 1, 64);
+                        .defineInRange("baseToSingleYield", 8, 1, 64); //BASTE??!!!? - GE, Dec 26 2023
                 singleToDoubleYield = builder
                         .comment("How many Double Bits should yield from Single Bits")
                         .defineInRange("singleToDoubleBits", 9, 1, 64);
