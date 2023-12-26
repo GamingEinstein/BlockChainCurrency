@@ -37,6 +37,11 @@ public class BitsFabricationRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return inputItems;
+    }
+
+    @Override
     public ItemStack assemble(SimpleContainer simpleContainer, RegistryAccess registryAccess) {
         return output.copy();
     }

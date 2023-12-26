@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "bits_fabricator_stone",
-		"1": "bits_fabricator_wood",
-		"2": "bits_fabricator_center",
-		"3": "bits_fabricator_leg",
-		"particle": "bits_fabricator_wood"
+		"0": "blockchain_currency:block/bits_fabricator_stone",
+		"1": "blockchain_currency:block/bits_fabricator_wood",
+		"2": "blockchain_currency:block/bits_fabricator_center",
+		"3": "blockchain_currency:block/bits_fabricator_leg",
+		"particle": "blockchain_currency:block/bits_fabricator_wood"
 	},
 	"elements": [
 		{
