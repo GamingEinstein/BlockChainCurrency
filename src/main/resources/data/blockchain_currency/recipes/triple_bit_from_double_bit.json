@@ -1,0 +1,12 @@
+{
+  "type": "blockchain_currency:bits_fabrication",
+  "ingredients": [
+    {
+      "item": "blockchain_currency:double_bit"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "blockchain_currency:triple_bit"
+  }
+}

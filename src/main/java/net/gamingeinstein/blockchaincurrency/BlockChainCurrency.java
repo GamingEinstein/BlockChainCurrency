@@ -5,6 +5,7 @@ import net.gamingeinstein.blockchaincurrency.block.ModBlocks;
 import net.gamingeinstein.blockchaincurrency.block.entity.ModBlockEntities;
 import net.gamingeinstein.blockchaincurrency.item.ModCreativeModeTabs;
 import net.gamingeinstein.blockchaincurrency.item.ModItems;
+import net.gamingeinstein.blockchaincurrency.recipe.ModRecipes;
 import net.gamingeinstein.blockchaincurrency.screen.BitsFabricatorScreen;
 import net.gamingeinstein.blockchaincurrency.screen.ModMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -32,9 +33,12 @@ public class BlockChainCurrency {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
         ModBlockEntities.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
+
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

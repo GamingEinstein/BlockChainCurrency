@@ -1,0 +1,12 @@
+{
+  "type": "blockchain_currency:bits_fabrication",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "output": {
+    "count": 8,
+    "item": "blockchain_currency:single_bit"
+  }
+}
